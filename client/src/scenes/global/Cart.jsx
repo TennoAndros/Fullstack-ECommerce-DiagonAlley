@@ -19,7 +19,7 @@ const FlexBox = styled(Box)`
   align-items: center;
 `;
 
-const CartMenu = () => {
+const Cart = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.cart);
@@ -50,7 +50,6 @@ const CartMenu = () => {
         backgroundColor="white"
       >
         <Box padding="30px" overflow="auto" height="100%">
-          {/* HEADER */}
           <FlexBox mb="15px">
             <Typography variant="h3">SHOPPING BAG ({cart.length})</Typography>
             <IconButton onClick={() => dispatch(setIsCartOpen({}))}>
@@ -58,7 +57,6 @@ const CartMenu = () => {
             </IconButton>
           </FlexBox>
 
-          {/* CART LIST */}
           <Box>
             {cart.map((item) => (
               <Box key={`${item.attributes.name}-${item.id}`}>
@@ -68,7 +66,7 @@ const CartMenu = () => {
                       alt={item?.name}
                       width="123px"
                       height="164px"
-                      src={`http://localhost:2000${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
+                      src={`${process.env.REACT_APP_BASE_URL}${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
                     />
                   </Box>
                   <Box flex="1 1 60%">
@@ -118,7 +116,6 @@ const CartMenu = () => {
             ))}
           </Box>
 
-          {/* ACTIONS */}
           <Box m="20px 0">
             <FlexBox m="20px 0">
               <Typography fontWeight="bold">SUBTOTAL</Typography>
@@ -147,4 +144,4 @@ const CartMenu = () => {
   );
 };
 
-export default CartMenu;
+export default Cart;
