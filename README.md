@@ -59,4 +59,4 @@ $ npm install
 $ npm start
 ```
 
-**This project was created as practice for MUI, React Redux, Strapi and Stripe. It is not meant to be used for production and is a work in progress. **
+***This project was created as practice for MUI, React Redux, Strapi and Stripe. It is not meant to be used for production and is a work in progress.***
