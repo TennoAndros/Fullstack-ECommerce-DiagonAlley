@@ -66,7 +66,7 @@ const Cart = () => {
                       alt={item?.name}
                       width="123px"
                       height="164px"
-                      src={`${process.env.REACT_APP_BASE_URL}${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
+                      src={`${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
                     />
                   </Box>
                   <Box flex="1 1 60%">
